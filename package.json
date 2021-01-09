@@ -9,7 +9,7 @@
   "homepage": "https://github.com/keyboardio/Chrysalis",
   "scripts": {
     "preinstall": "node tools/preinstall.js",
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "CXXFLAGS=-std=c++14 electron-builder install-app-deps",
     "start": "electron-webpack dev",
     "compile": "electron-webpack",
     "build:all": "npm-run-all compile --parallel 'electron-builder -m' 'electron-builder -w' 'electron-builder -l'",
