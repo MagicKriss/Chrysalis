@@ -10,8 +10,8 @@
   "scripts": {
     "preinstall": "node tools/preinstall.js",
     "postinstall": "CXXFLAGS=-std=c++14 electron-builder install-app-deps",
-    "start": "electron-webpack dev",
-    "compile": "electron-webpack",
+    "start": "CXXFLAGS=-std=c++14 electron-webpack dev",
+    "compile": "CXXFLAGS=-std=c++14 electron-webpack",
     "build:all": "npm-run-all compile --parallel 'electron-builder -m' 'electron-builder -w' 'electron-builder -l'",
     "build:osx": "yarn compile && electron-builder -m",
     "build:mac": "yarn run build:osx",
